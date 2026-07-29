@@ -3,6 +3,7 @@
   const startButton = document.querySelector('#game-start');
   const pauseButton = document.querySelector('#game-pause');
   const scoreEl = document.querySelector('#game-score');
+  const bestEl = document.querySelector('#game-best');
   const statusEl = document.querySelector('#game-status');
   const overlay = document.querySelector('#game-overlay');
   if (!canvas || !startButton || !pauseButton) return;
@@ -21,11 +22,13 @@
   let food;
   let enemies;
   let score = 0;
+  let bestScore = 0;
   let state = 'ready';
   let elapsed = 0;
   let lastFrame = performance.now();
   let lastSnakeTick = 0;
   let lastEnemyTick = 0;
+  try { bestScore = Number(window.localStorage.getItem('snakeBestScore') || 0); } catch (error) { bestScore = 0; }
 
   const samePosition = (a, b) => a && b && a.x === b.x && a.y === b.y;
   const occupied = (position) => snake.some((part) => samePosition(part, position)) || samePosition(food, position) || enemies.some((enemy) => enemy.state === 'active' && samePosition(enemy, position));
@@ -33,6 +36,7 @@
   const freeCell = () => { let position; do { position = randomCell(); } while (occupied(position)); return position; };
   const setStatus = (message) => { statusEl.textContent = message; };
   const updateScore = () => { scoreEl.textContent = String(score); };
+  const updateBest = () => { if (score > bestScore) { bestScore = score; try { window.localStorage.setItem('snakeBestScore', String(bestScore)); } catch (error) { /* storage is optional */ } } if (bestEl) bestEl.textContent = String(bestScore); };
 
   function createEnemy() {
     const position = freeCell();
@@ -52,6 +56,7 @@
     enemies = [];
     for (let index = 0; index < enemyCount; index += 1) enemies.push(createEnemy());
     updateScore();
+    updateBest();
     draw();
   }
 
@@ -79,6 +84,7 @@
     if (samePosition(head, food)) {
       score += 10;
       updateScore();
+      updateBest();
       food = freeCell();
     } else {
       snake.pop();
