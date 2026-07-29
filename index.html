@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="[사람 확인 필요]의 보안 소프트웨어 및 AI 보안 평가 프로필">
-  <title>[사람 확인 필요] | Security Software & AI Evaluation</title>
+  <meta name="description" content="보안 소프트웨어 개발과 AI 기반 코드 보안 평가를 다루는 프로필 사이트">
+  <title>Security Software & AI Evaluation | [사람 확인 필요]</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <script src="game.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top">[사람 확인 필요]</a>
+    <a class="brand" href="#top" aria-label="홈으로 이동"><span class="brand-mark">◈</span> [사람 확인 필요]</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">메뉴</button>
     <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
       <a href="#about">About</a>
@@ -22,39 +23,71 @@
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">SECURITY SOFTWARE · AI EVALUATION</p>
-      <h1 id="hero-title">보안 소프트웨어와 AI 평가 시스템을 만드는 개발자</h1>
-      <p>Windows 애플리케이션 개발과 코드 취약점 탐지 AI 모델 평가 자동화 경험을 바탕으로 신뢰할 수 있는 소프트웨어를 지향합니다.</p>
+      <div class="hero-copy">
+        <p class="eyebrow">SECURITY SOFTWARE · AI EVALUATION</p>
+        <h1 id="hero-title">신뢰할 수 있는 소프트웨어를 위한 <span>보안과 평가</span></h1>
+        <p class="hero-lede">Windows 애플리케이션 개발과 코드 취약점 탐지 AI 모델 평가 자동화 경험을 바탕으로, 더 재현 가능하고 검증 가능한 개발을 고민합니다.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#experience">경험 살펴보기 <span aria-hidden="true">↘</span></a>
+          <a class="button button-quiet" href="#games">Games <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="전문 분야 요약">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <p class="card-kicker">CURRENT FOCUS</p>
+        <h2>AI 보안 평가 플랫폼</h2>
+        <p>LLM-as-a-Judge 기반 자동 평가와 회귀 테스트로 AI 모델의 신뢰성과 재현성을 높입니다.</p>
+        <div class="signal-row"><span class="signal-dot"></span> Building reliable evaluation loops</div>
+      </div>
     </section>
 
-    <section id="about" class="section" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p>Windows 보안 소프트웨어를 개발하고, AI 모델의 성능과 재현성을 높이는 평가 플랫폼을 개발하고 있습니다.</p>
+    <section id="about" class="section about-section" aria-labelledby="about-title">
+      <div class="section-label">01 / ABOUT</div>
+      <div class="section-content two-column">
+        <h2 id="about-title">보안은 기능이 아니라<br><span class="accent-text">개발의 태도</span>라고 생각합니다.</h2>
+        <div>
+          <p>보안 소프트웨어 개발자로 근무하며 Windows 환경의 애플리케이션과 보안 기능을 개발하고 유지보수해 왔습니다. 현재는 코드 취약점 탐지 AI 모델의 성능을 자동으로 평가하는 내부 플랫폼을 만들고 있습니다.</p>
+          <p>평가 프로세스를 자동화하고 결과를 재현 가능하게 만드는 일에 관심이 있습니다. 좋은 모델을 만드는 것만큼, 그 모델이 언제나 같은 기준으로 검증되는 시스템을 만드는 것도 중요하다고 믿습니다.</p>
+        </div>
+      </div>
     </section>
 
     <section id="skills" class="section" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
-      <div class="card-grid">
-        <article class="card"><h3>Development</h3><p>C/C++, C#, Python, Windows Application, Visual Studio, Git</p></article>
-        <article class="card"><h3>AI & Security</h3><p>LLM-as-a-Judge, AI 모델 평가, 코드 취약점 분석, 회귀 테스트 자동화, 로컬 LLM</p></article>
+      <div class="section-label">02 / TOOLKIT</div>
+      <div class="section-heading"><h2 id="skills-title">주요 기술</h2><p>문제를 분석하고, 안전하게 자동화하고, 결과를 확인합니다.</p></div>
+      <div class="skill-grid">
+        <article class="skill-card"><span class="skill-number">01</span><h3>Development</h3><p>C/C++ · C# · Python<br>Windows Application · Visual Studio · Git</p></article>
+        <article class="skill-card"><span class="skill-number">02</span><h3>AI Evaluation</h3><p>LLM-as-a-Judge · 모델 성능 평가<br>모델 비교 · 회귀 테스트 자동화</p></article>
+        <article class="skill-card"><span class="skill-number">03</span><h3>Security</h3><p>코드 취약점 분석 · 보안 테스트 데이터셋<br>Windows 시스템 보안 · VBS 관련 개발</p></article>
       </div>
     </section>
 
     <section id="experience" class="section" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
-      <div class="card-grid">
-        <article class="card"><h3>Windows 보안 소프트웨어 개발</h3><p>C/C++ 및 C# 기반 Windows 애플리케이션 개발, 보안 기능 유지보수, 시스템 이슈 분석 및 해결</p></article>
-        <article class="card"><h3>AI 기반 보안 평가 시스템 개발</h3><p>코드 취약점 탐지 AI 모델 평가 플랫폼, 자동 평가, 모델 비교 및 보안 테스트 데이터셋 기반 회귀 테스트</p></article>
+      <div class="section-label">03 / EXPERIENCE</div>
+      <div class="section-heading"><h2 id="experience-title">어제의 문제를<br><span class="accent-text">내일의 기준</span>으로</h2><p>확인된 프로필 자료를 바탕으로 정리한 경험입니다.</p></div>
+      <div class="experience-list">
+        <article class="experience-item"><div class="experience-index">01</div><div><p class="card-kicker">WINDOWS SECURITY SOFTWARE</p><h3>Windows 보안 소프트웨어 개발</h3><p>C/C++ 및 C#을 활용한 Windows 애플리케이션 개발과 Windows 보안 기능(VBS 등) 관련 개발·유지보수, 시스템 이슈 분석 및 해결</p></div><span class="item-arrow" aria-hidden="true">↗</span></article>
+        <article class="experience-item"><div class="experience-index">02</div><div><p class="card-kicker">AI-BASED SECURITY EVALUATION</p><h3>AI 기반 보안 평가 시스템 개발</h3><p>코드 취약점 탐지 AI 모델 평가 플랫폼, LLM-as-a-Judge 기반 자동 평가, 모델 성능 비교와 보안 테스트 데이터셋 기반 회귀 테스트 자동화</p></div><span class="item-arrow" aria-hidden="true">↗</span></article>
       </div>
     </section>
 
-    <section id="games" class="section games" aria-labelledby="games-title">
-      <h2 id="games-title">Games</h2>
-      <p>키보드와 모바일 터치로 즐길 수 있는 지렁이 게임을 준비하고 있습니다.</p>
-      <p class="notice">게임 세부 규칙: [사람 확인 필요]</p>
+    <section class="section learning-section" aria-labelledby="learning-title">
+      <div class="section-label">04 / LEARNING</div>
+      <div class="section-content two-column"><h2 id="learning-title">계속 배우는<br><span class="accent-text">보안의 언어</span></h2><div><p>대학원에서 암호학 및 정보보호 기초 이론을 학습했고, 보안 원리와 암호 기술을 기반으로 소프트웨어 보안을 공부해 왔습니다.</p><div class="tag-list" aria-label="관심 분야"><span>Software Security</span><span>LLM</span><span>Code Analysis</span><span>Secure Development</span><span>Security Automation</span></div></div></div>
+    </section>
+
+    <section id="games" class="section game-section" aria-labelledby="games-title">
+      <div class="section-label">05 / GAMES</div>
+      <div class="section-heading"><h2 id="games-title">잠깐의 휴식,<br><span class="accent-text">작은 루프 게임</span></h2><p>키보드 또는 모바일 터치로 지렁이를 움직여 먹이를 모으세요. 느리게 움직이는 적 5개는 함께 생성되고 5초 뒤 폭발한 다음 2초 후 다시 나타납니다.</p></div>
+      <div class="game-shell">
+        <div class="game-toolbar"><div class="score-box"><span>점수</span><strong id="game-score">0</strong></div><div id="game-status" class="game-status" role="status" aria-live="polite">시작 버튼을 눌러 플레이하세요.</div><div class="game-actions"><button id="game-start" class="button button-primary" type="button">시작</button><button id="game-pause" class="button button-quiet" type="button" disabled>일시정지</button></div></div>
+        <div class="game-stage"><canvas id="game-canvas" width="640" height="400" tabindex="0" aria-label="지렁이 게임 화면"></canvas><div class="game-overlay" id="game-overlay"><strong>READY?</strong><span>방향키·WASD 또는 아래 터치 버튼으로 움직이세요.</span></div></div>
+        <div class="game-controls" aria-label="모바일 방향 조작"><button type="button" data-direction="up" aria-label="위로 이동">↑</button><div><button type="button" data-direction="left" aria-label="왼쪽으로 이동">←</button><button type="button" data-direction="down" aria-label="아래로 이동">↓</button><button type="button" data-direction="right" aria-label="오른쪽으로 이동">→</button></div></div>
+        <p class="game-help">적과 부딪히거나 벽에 닿으면 게임이 끝납니다. 폭발 중인 적은 충돌 판정에서 제외됩니다.</p>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer"><p>© [사람 확인 필요] · Secure Software Development</p></footer>
+  <footer class="site-footer"><p>© [사람 확인 필요] · Secure Software Development</p><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
