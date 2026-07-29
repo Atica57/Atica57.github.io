@@ -1,0 +1,39 @@
+:root {
+  --ink: #17324d;
+  --muted: #5f7182;
+  --paper: #f7fbff;
+  --surface: #ffffff;
+  --accent: #2d8cda;
+  --line: #dceaf4;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font: 1rem/1.7 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: inherit; }
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 72rem; margin: auto; padding: 1.25rem 1.5rem; }
+.brand { color: var(--accent); font-weight: 800; text-decoration: none; }
+.site-nav { display: flex; gap: 1.25rem; }
+.site-nav a { text-decoration: none; font-weight: 650; }
+.site-nav a:hover, .site-nav a:focus-visible { color: var(--accent); }
+.menu-toggle { display: none; border: 1px solid var(--line); border-radius: .5rem; background: var(--surface); color: var(--ink); padding: .5rem .75rem; }
+main { max-width: 72rem; margin: auto; padding: 0 1.5rem; }
+.hero { padding: 6rem 0 4rem; max-width: 52rem; }
+.eyebrow { color: var(--accent); font-size: .8rem; font-weight: 800; letter-spacing: .12em; }
+h1, h2, h3 { line-height: 1.2; }
+h1 { font-size: clamp(2.3rem, 6vw, 4.8rem); margin: 1rem 0; }
+h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.section { border-top: 1px solid var(--line); padding: 4rem 0; }
+.card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: 1.5rem; }
+.card h3 { margin-top: 0; }
+.notice { color: var(--muted); }
+.site-footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 2rem; padding: 2rem 1.5rem; text-align: center; }
+@media (max-width: 48rem) {
+  .menu-toggle { display: block; }
+  .site-nav { display: none; flex-direction: column; position: absolute; top: 4.5rem; right: 1rem; padding: 1rem; border: 1px solid var(--line); border-radius: .75rem; background: var(--surface); box-shadow: 0 .75rem 2rem #17324d1a; }
+  .site-nav.is-open { display: flex; }
+  .hero { padding: 4rem 0 3rem; }
+  .card-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
